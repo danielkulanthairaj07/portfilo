@@ -1,0 +1,90 @@
+/* ================= NAVBAR ================= */
+
+.nav {
+  position: fixed;          /* 🔥 IMPORTANT */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 72px;
+
+  z-index: 9999;
+
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(12px);
+}
+
+/* WIDTH CONTROL */
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+
+  height: 72px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+
+/* LOGO */
+.nav-logo {
+  font-family: "Playfair Display", serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* CENTER MENU */
+.nav-center {
+  display: flex;
+  justify-content: center;
+  gap: 34px;
+}
+
+.nav-center a {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #d6d6d6;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-center a:hover {
+  color: #ffffff;
+}
+
+/* UNDERLINE */
+.nav-center a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #ffcc15, #ff8a3d);
+  transition: width 0.3s ease;
+}
+
+.nav-center a:hover::after {
+  width: 100%;
+}
+
+/* RESUME */
+.resume-btn {
+  padding: 8px 22px;
+  border-radius: 999px;
+  border: 1px solid #ff8a3d;
+  color: #ff8a3d;
+}
+
+.resume-btn:hover {
+  background: #ff8a3d;
+  color: #000;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .nav-center {
+    display: none;
+  }
+}
